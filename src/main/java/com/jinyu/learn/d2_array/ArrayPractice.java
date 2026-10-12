@@ -1,28 +1,44 @@
 package com.jinyu.learn.d2_array;
 
-/**
- * 数组专项练习
- *
- * 规则：每个 TODO 都自己写，写完在 IDEA 里跑一次看输出。
- * 全部写完后喊我，我出题抽查。
- */
 public class ArrayPractice {
 
     public static void main(String[] args) {
 
-        // TODO 1：建一个长度为 5 的 int 数组，只给长度、不赋值。
-        //         先在心里猜一下遍历打印会是什么，再跑代码验证。
+        int[] array = new int[5];
+        for (int i = 0; i < 5; i++) {
+            System.out.println(array[i]);
+        }
 
-        // TODO 2：建一个装 {3, 1, 4, 1, 5} 的数组。
-        //         打印它的长度，再算出所有元素的和并打印。
+        int[] array1 = {3, 1, 4, 1, 5};
+        System.out.println(array1.length);
+        int res = 0;
+        for (int j = 0; j < array1.length; j++) {
+            res += array1[j];
+        }
+        System.out.println(res);
 
-        // TODO 3：在 TODO 2 那个数组里找出最大值并打印。
+        int max = array1[0];
+        for (int k = 0; k < array1.length; k++) {
+            if (array1[k] > max) {
+                max = array1[k];
+            }
+        }
+        System.out.println(max);
 
-        // TODO 4：把这个数组【原地】反转，不能新建数组，打印反转后的结果。
-        //         提示：从两端往中间走，交换两个位置的值（需要一个临时变量）。
+        int l = 0;
+        int r = array1.length-1;
+        while(l<r){
+            int tmp = 0;
+            tmp = array1[l];
+            array1[l] = array1[r];
+            array1[r] = tmp;
+            ++l;
+            --r;
+        }
+        for (int a = 0; a < array1.length; a++) {
+            System.out.println(array1[a]);
+        }
 
-        // TODO 5：故意访问一个不存在的下标（比如长度为 5 的数组去取 arr[5]），
-        //         跑一次，把控制台报的异常名字抄下来。
-
+        System.out.println(array1[5]);
     }
 }
